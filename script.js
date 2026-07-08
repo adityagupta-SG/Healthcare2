@@ -1,7 +1,7 @@
 // =====================================================
 // Wellspring Family Clinic — Scripts
 // Sections: Mobile Nav Toggle | Scroll Fade-in | Form Validation |
-//           Checklist Opt-in | Footer Year
+//           Checklist Opt-in | WhatsApp Widget | Footer Year
 // =====================================================
 
 // ===== Mobile Nav Toggle =====
@@ -184,6 +184,45 @@ checklistForm.addEventListener('submit', (e) => {
   checklistSuccess.hidden = false;
   checklistForm.reset();
   checklistEmail.classList.remove('invalid');
+});
+
+// ===== WhatsApp Widget =====
+const whatsappToggle = document.getElementById('whatsappToggle');
+const whatsappPanel = document.getElementById('whatsappPanel');
+const whatsappPanelClose = document.getElementById('whatsappPanelClose');
+
+function openWhatsappPanel() {
+  whatsappPanel.hidden = false;
+  whatsappToggle.setAttribute('aria-expanded', 'true');
+}
+
+function closeWhatsappPanel() {
+  whatsappPanel.hidden = true;
+  whatsappToggle.setAttribute('aria-expanded', 'false');
+}
+
+whatsappToggle.addEventListener('click', () => {
+  if (whatsappPanel.hidden) {
+    openWhatsappPanel();
+  } else {
+    closeWhatsappPanel();
+  }
+});
+
+whatsappPanelClose.addEventListener('click', closeWhatsappPanel);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !whatsappPanel.hidden) {
+    closeWhatsappPanel();
+    whatsappToggle.focus();
+  }
+});
+
+document.addEventListener('click', (e) => {
+  const isOutside = !whatsappPanel.contains(e.target) && !whatsappToggle.contains(e.target);
+  if (isOutside && !whatsappPanel.hidden) {
+    closeWhatsappPanel();
+  }
 });
 
 // ===== Footer Year =====

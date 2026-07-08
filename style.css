@@ -16,7 +16,7 @@
    13. Contact / Appointment Form
    14. Footer
    15. Scroll Fade-in & Hero Reveal Animation
-   16. Floating WhatsApp Button
+   16. Floating WhatsApp Widget
    17. Media Queries
 ===================================================== */
 
@@ -944,7 +944,7 @@ h1, h2, h3 {
   }
 }
 
-/* ===== 16. Floating WhatsApp Button ===== */
+/* ===== 16. Floating WhatsApp Widget ===== */
 .whatsapp-fab {
   position: fixed;
   right: 24px;
@@ -952,9 +952,11 @@ h1, h2, h3 {
   z-index: 900;
   width: 60px;
   height: 60px;
+  border: none;
   border-radius: 50%;
   background: #2F6B52;
   color: #ffffff;
+  font-family: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1010,6 +1012,144 @@ h1, h2, h3 {
   padding: 0.6rem 1.1rem;
   border-radius: 999px;
   box-shadow: 0 4px 16px rgba(31, 58, 46, 0.18);
+}
+
+.whatsapp-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 100px;
+  z-index: 900;
+  width: 340px;
+  max-width: calc(100vw - 32px);
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(31, 58, 46, 0.25);
+}
+
+.whatsapp-panel-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #1F3A2E 0%, #2F6B52 100%);
+  color: #ffffff;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.whatsapp-panel-avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-panel-avatar .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.whatsapp-panel-heading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.whatsapp-panel-heading strong {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.whatsapp-panel-heading span {
+  font-size: 0.82rem;
+  color: #CFE6D6;
+}
+
+.whatsapp-panel-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.15rem;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+
+.whatsapp-panel-close:hover,
+.whatsapp-panel-close:focus-visible {
+  opacity: 1;
+}
+
+.whatsapp-panel-close .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.whatsapp-panel-body {
+  padding: 1.25rem;
+}
+
+.whatsapp-panel-intro {
+  color: #3B4A3E;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.whatsapp-quick-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.whatsapp-quick-option {
+  display: block;
+  background: #F2EFE4;
+  color: #1F3A2E;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.whatsapp-quick-option:hover,
+.whatsapp-quick-option:focus-visible {
+  background: #e7e2d3;
+}
+
+.whatsapp-panel-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: #2F6B52;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.whatsapp-panel-cta:hover,
+.whatsapp-panel-cta:focus-visible {
+  background: #234F3D;
+  transform: translateY(-1px);
+}
+
+.whatsapp-panel-cta .icon {
+  width: 18px;
+  height: 18px;
 }
 
 /* ===== 17. Media Queries ===== */
@@ -1081,5 +1221,11 @@ h1, h2, h3 {
   .whatsapp-fab {
     right: 16px;
     bottom: 16px;
+  }
+
+  .whatsapp-panel {
+    right: 16px;
+    bottom: 92px;
+    width: calc(100vw - 32px);
   }
 }
