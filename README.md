@@ -14,6 +14,7 @@ A static, single-page marketing website for a fictional healthcare clinic. Built
 - Sections: Hero, How It Works, Services, Meet Our Care Team, Testimonials, FAQ (native accordion), Free New Patient Checklist opt-in, Appointment/Contact form, Footer
 - Client-side validated appointment form (name, email, phone) and checklist opt-in form (email), both with inline error messages — no `alert()` popups
 - On-page SEO: canonical tag, Open Graph/Twitter cards, `MedicalClinic` + `FAQPage` JSON-LD structured data, `robots.txt`, and `sitemap.xml`
+- Floating WhatsApp chat button (bottom-right, pulsing ring, respects `prefers-reduced-motion`) linking to a pre-filled `wa.me` chat
 
 ## Tech Stack
 
