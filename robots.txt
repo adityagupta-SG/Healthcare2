@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adityagupta-sg.github.io/Healthcare2/sitemap.xml

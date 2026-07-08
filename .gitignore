@@ -1,1 +1,6 @@
 .claude/settings.local.json
+
+# Vendored Claude Code skill installs (junctions/symlinks + third-party data,
+# not website source) — reinstall via the npx skills add commands if needed.
+.agents/skills/
+.claude/skills/

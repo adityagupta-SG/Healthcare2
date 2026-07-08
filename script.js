@@ -1,6 +1,7 @@
 // =====================================================
 // Wellspring Family Clinic — Scripts
-// Sections: Mobile Nav Toggle | Scroll Fade-in | Form Validation | Footer Year
+// Sections: Mobile Nav Toggle | Scroll Fade-in | Form Validation |
+//           Checklist Opt-in | Footer Year
 // =====================================================
 
 // ===== Mobile Nav Toggle =====
@@ -115,6 +116,48 @@ form.addEventListener('submit', (e) => {
   formSuccess.hidden = false;
   form.reset();
   Object.values(fields).forEach((field) => field.input.classList.remove('invalid'));
+});
+
+// ===== Checklist Opt-in (Free Resource) =====
+const checklistForm = document.getElementById('checklistForm');
+const checklistSuccess = document.getElementById('checklistSuccess');
+const checklistEmail = document.getElementById('checklistEmail');
+const checklistEmailError = document.getElementById('checklistEmailError');
+
+function validateChecklistEmail() {
+  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(checklistEmail.value.trim());
+
+  if (valid) {
+    checklistEmail.classList.remove('invalid');
+    checklistEmailError.textContent = '';
+  } else {
+    checklistEmail.classList.add('invalid');
+    checklistEmailError.textContent = 'Please enter a valid email address.';
+  }
+
+  return valid;
+}
+
+checklistEmail.addEventListener('blur', validateChecklistEmail);
+
+checklistForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (!validateChecklistEmail()) {
+    checklistSuccess.hidden = true;
+    return;
+  }
+
+  console.log('Checklist requested for:', checklistEmail.value.trim());
+
+  // ---------------------------------------------------------------
+  // Real integration would go here, e.g. posting to an email
+  // service provider (Mailchimp, ConvertKit) or a fetch('/api/leads', ...)
+  // ---------------------------------------------------------------
+
+  checklistSuccess.hidden = false;
+  checklistForm.reset();
+  checklistEmail.classList.remove('invalid');
 });
 
 // ===== Footer Year =====

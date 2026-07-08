@@ -4,7 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wellspring Family Clinic — Compassionate Care, Close to You</title>
-  <meta name="description" content="Wellspring Family Clinic offers compassionate, certified medical care for the whole family. Book an appointment today." />
+  <meta name="description" content="Compassionate, certified family healthcare in Springfield: checkups, pediatrics, cardiology, and 24/7 emergency support. Book your appointment today." />
+  <link rel="canonical" href="https://adityagupta-sg.github.io/Healthcare2/" />
+
+  <!-- Favicon (inline SVG, matches logo mark — no extra asset needed) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230d7377'/%3E%3Cpath d='M12 6v12M6 12h12' stroke='white' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adityagupta-sg.github.io/Healthcare2/" />
+  <meta property="og:title" content="Wellspring Family Clinic — Compassionate Care, Close to You" />
+  <meta property="og:description" content="Compassionate, certified family healthcare in Springfield: checkups, pediatrics, cardiology, and 24/7 emergency support." />
+  <meta property="og:image" content="https://adityagupta-sg.github.io/Healthcare2/assets/screenshot.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Wellspring Family Clinic — Compassionate Care, Close to You" />
+  <meta name="twitter:description" content="Compassionate, certified family healthcare in Springfield: checkups, pediatrics, cardiology, and 24/7 emergency support." />
+  <meta name="twitter:image" content="https://adityagupta-sg.github.io/Healthcare2/assets/screenshot.png" />
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,6 +27,85 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured data: local medical business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Wellspring Family Clinic",
+    "description": "Compassionate, certified family healthcare offering general checkups, pediatrics, cardiology, and 24/7 emergency care.",
+    "url": "https://adityagupta-sg.github.io/Healthcare2/",
+    "image": "https://adityagupta-sg.github.io/Healthcare2/assets/screenshot.png",
+    "telephone": "+1-555-123-4567",
+    "email": "hello@wellspringclinic.example",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Maple Avenue",
+      "addressLocality": "Springfield",
+      "addressRegion": "ST",
+      "postalCode": "12345",
+      "addressCountry": "US"
+    },
+    "medicalSpecialty": ["General Practice", "Pediatric", "Cardiovascular"],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  }
+  </script>
+
+  <!-- Structured data: FAQ (must mirror the visible #faq section content) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are you accepting new patients?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — Wellspring Family Clinic is welcoming new patients of all ages. Book an appointment online and our care team will confirm within one business day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you accept insurance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We accept most major insurance plans. Mention your provider when you request an appointment and we'll confirm your coverage before your visit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I walk in without an appointment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Walk-ins are welcome for urgent concerns, though booking ahead means shorter wait times. Our 24/7 line is always open for anything that can't wait."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I bring to my first visit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bring a photo ID, your insurance card, and a list of any current medications. If you're a new patient, arriving 10 minutes early helps with paperwork."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer pediatric and family appointments together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — many families book same-day visits for multiple household members, including our pediatric team for children and teens."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -21,7 +115,9 @@
   <header class="site-header">
     <nav class="navbar" aria-label="Primary navigation">
       <a href="#home" class="logo">
-        <span class="logo-icon" aria-hidden="true">✚</span>
+        <span class="logo-icon" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </span>
         Wellspring Clinic
       </a>
 
@@ -32,7 +128,9 @@
       <ul class="nav-menu" id="navMenu">
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#team" class="nav-link">Our Team</a></li>
         <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
         <li><a href="#contact" class="nav-link nav-cta">Book Now</a></li>
       </ul>
@@ -45,22 +143,48 @@
     <section id="home" class="hero">
       <div class="hero-overlay"></div>
       <div class="container hero-content">
-        <p class="hero-eyebrow">Trusted Family Healthcare</p>
-        <h1 class="hero-headline">Compassionate Care, Close to You</h1>
-        <p class="hero-subheading">
+        <p class="hero-eyebrow reveal reveal-1">Trusted Family Healthcare</p>
+        <h1 class="hero-headline reveal reveal-2">Compassionate Care, Close to You</h1>
+        <p class="hero-subheading reveal reveal-3">
           From routine checkups to specialist care, Wellspring Family Clinic is here for you
           and your loved ones — every step of the way.
         </p>
-        <div class="hero-buttons">
+        <div class="hero-buttons reveal reveal-4">
           <a href="#contact" class="btn btn-primary">Book an Appointment</a>
           <a href="#services" class="btn btn-secondary">Our Services</a>
         </div>
 
-        <ul class="trust-strip" aria-label="Why patients trust us">
-          <li><span class="trust-icon" aria-hidden="true">🕑</span> 24/7 Support</li>
-          <li><span class="trust-icon" aria-hidden="true">🩺</span> Certified Doctors</li>
-          <li><span class="trust-icon" aria-hidden="true">❤️</span> 10,000+ Patients</li>
+        <ul class="trust-strip reveal reveal-5" aria-label="Why patients trust us">
+          <li><span class="trust-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span> 24/7 Support</li>
+          <li><span class="trust-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span> Certified Doctors</li>
+          <li><span class="trust-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.5-3 2.7-5 5.5-5s5 2 5.5 5"/><path d="M14.5 14.5c2 .2 3.6 1.8 4 4.5"/></svg></span> 10,000+ Patients</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ===================== How It Works ===================== -->
+    <section id="how-it-works" class="how-it-works fade-in">
+      <div class="container">
+        <h2 class="section-heading">Getting Care Is Simple</h2>
+        <p class="section-intro">Three steps from "I need to see someone" to walking out with a plan.</p>
+
+        <ol class="steps-grid">
+          <li class="step-card">
+            <span class="step-number">01</span>
+            <h3>Request your visit</h3>
+            <p>Tell us what's going on through the form below — our care team confirms within one business day.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-number">02</span>
+            <h3>Meet your care team</h3>
+            <p>See a certified doctor or specialist who takes the time to actually listen, not just look at a chart.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-number">03</span>
+            <h3>Leave with a plan</h3>
+            <p>Walk out with clear next steps, follow-up scheduled if needed, and a direct line if anything changes.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -74,27 +198,68 @@
 
         <div class="services-grid">
           <article class="service-card fade-in">
-            <div class="service-icon" aria-hidden="true">🩺</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 12.5l2 2 4-4.5"/></svg>
+            </div>
             <h3>General Checkups</h3>
             <p>Routine screenings and preventive care to help you stay healthy year-round.</p>
           </article>
 
           <article class="service-card fade-in">
-            <div class="service-icon" aria-hidden="true">🧒</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M9.5 8.5c.5.6 1 .6 1.5 0M12.5 8.5c.5.6 1 .6 1.5 0"/><path d="M10 10.8c.7.6 1.3.6 2 0"/><path d="M5 21c.7-3.5 3.2-6 7-6s6.3 2.5 7 6"/></svg>
+            </div>
             <h3>Pediatrics</h3>
             <p>Gentle, attentive care for infants, children, and teens at every stage of growth.</p>
           </article>
 
           <article class="service-card fade-in">
-            <div class="service-icon" aria-hidden="true">❤️</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M12 20s-6.5-4.2-9-8.6C1.3 8 2.7 4.5 6 4c2-.3 3.6.7 4.5 2 .9-1.3 2.5-2.3 4.5-2 3.3.5 4.7 4 3 7.4-2.5 4.4-9 8.6-9 8.6z"/><path d="M4 12h3l1.5-3 2 5 1.5-2.5H20"/></svg>
+            </div>
             <h3>Cardiology</h3>
             <p>Advanced heart health monitoring and treatment from experienced specialists.</p>
           </article>
 
           <article class="service-card fade-in">
-            <div class="service-icon" aria-hidden="true">🚑</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+            </div>
             <h3>Emergency Care</h3>
             <p>Round-the-clock urgent care when you need immediate medical attention.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Meet the Care Team ===================== -->
+    <section id="team" class="team fade-in">
+      <div class="container">
+        <h2 class="section-heading">Meet Our Care Team</h2>
+        <p class="section-intro">
+          Board-certified physicians who take the time to know you, not just your chart.
+        </p>
+
+        <div class="team-grid">
+          <article class="team-card fade-in">
+            <div class="avatar avatar-lg" style="background:#0d7377;">DP</div>
+            <h3>Dr. Anika Patel</h3>
+            <p class="team-role">General &amp; Family Medicine</p>
+            <p class="team-bio">15 years in family practice, focused on preventive care and long-term patient relationships.</p>
+          </article>
+
+          <article class="team-card fade-in">
+            <div class="avatar avatar-lg" style="background:#146c94;">DR</div>
+            <h3>Dr. Marcus Reyes</h3>
+            <p class="team-role">Pediatrics</p>
+            <p class="team-bio">Board-certified pediatrician who specializes in making first visits calm for both kids and parents.</p>
+          </article>
+
+          <article class="team-card fade-in">
+            <div class="avatar avatar-lg" style="background:#2f9c95;">DC</div>
+            <h3>Dr. Elena Chowdhury</h3>
+            <p class="team-role">Cardiology</p>
+            <p class="team-bio">Specializes in preventive heart health and long-term monitoring for patients of every age.</p>
           </article>
         </div>
       </div>
@@ -110,6 +275,7 @@
 
         <div class="testimonials-grid">
           <article class="testimonial-card fade-in">
+            <svg class="icon quote-mark" aria-hidden="true" viewBox="0 0 24 24"><path d="M9.5 8C6.5 9 5 11.3 5 14.5c0 2 1.2 3.5 3 3.5s3-1.3 3-3.2c0-1.6-1-2.7-2.5-2.9C8.8 10.4 9.7 9.2 11 8.5L9.5 8zm8 0c-3 1-4.5 3.3-4.5 6.5 0 2 1.2 3.5 3 3.5s3-1.3 3-3.2c0-1.6-1-2.7-2.5-2.9.3-1.5 1.2-2.7 2.5-3.4L17.5 8z"/></svg>
             <div class="avatar" style="background:#0d7377;">SM</div>
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
             <p class="quote">
@@ -120,6 +286,7 @@
           </article>
 
           <article class="testimonial-card fade-in">
+            <svg class="icon quote-mark" aria-hidden="true" viewBox="0 0 24 24"><path d="M9.5 8C6.5 9 5 11.3 5 14.5c0 2 1.2 3.5 3 3.5s3-1.3 3-3.2c0-1.6-1-2.7-2.5-2.9C8.8 10.4 9.7 9.2 11 8.5L9.5 8zm8 0c-3 1-4.5 3.3-4.5 6.5 0 2 1.2 3.5 3 3.5s3-1.3 3-3.2c0-1.6-1-2.7-2.5-2.9.3-1.5 1.2-2.7 2.5-3.4L17.5 8z"/></svg>
             <div class="avatar" style="background:#2f9c95;">RK</div>
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
             <p class="quote">
@@ -130,6 +297,7 @@
           </article>
 
           <article class="testimonial-card fade-in">
+            <svg class="icon quote-mark" aria-hidden="true" viewBox="0 0 24 24"><path d="M9.5 8C6.5 9 5 11.3 5 14.5c0 2 1.2 3.5 3 3.5s3-1.3 3-3.2c0-1.6-1-2.7-2.5-2.9C8.8 10.4 9.7 9.2 11 8.5L9.5 8zm8 0c-3 1-4.5 3.3-4.5 6.5 0 2 1.2 3.5 3 3.5s3-1.3 3-3.2c0-1.6-1-2.7-2.5-2.9.3-1.5 1.2-2.7 2.5-3.4L17.5 8z"/></svg>
             <div class="avatar" style="background:#146c94;">AL</div>
             <div class="stars" aria-label="4 out of 5 stars">★★★★☆</div>
             <p class="quote">
@@ -140,6 +308,7 @@
           </article>
 
           <article class="testimonial-card fade-in">
+            <svg class="icon quote-mark" aria-hidden="true" viewBox="0 0 24 24"><path d="M9.5 8C6.5 9 5 11.3 5 14.5c0 2 1.2 3.5 3 3.5s3-1.3 3-3.2c0-1.6-1-2.7-2.5-2.9C8.8 10.4 9.7 9.2 11 8.5L9.5 8zm8 0c-3 1-4.5 3.3-4.5 6.5 0 2 1.2 3.5 3 3.5s3-1.3 3-3.2c0-1.6-1-2.7-2.5-2.9.3-1.5 1.2-2.7 2.5-3.4L17.5 8z"/></svg>
             <div class="avatar" style="background:#0d7377;">JT</div>
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
             <p class="quote">
@@ -149,6 +318,66 @@
             <p class="patient-name">James Turner</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section id="faq" class="faq fade-in">
+      <div class="container faq-inner">
+        <h2 class="section-heading">Common Questions</h2>
+        <p class="section-intro">Answers to what new patients usually ask before their first visit.</p>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Are you accepting new patients?</summary>
+            <p>Yes — Wellspring Family Clinic is welcoming new patients of all ages. Book an appointment online and our care team will confirm within one business day.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you accept insurance?</summary>
+            <p>We accept most major insurance plans. Mention your provider when you request an appointment and we'll confirm your coverage before your visit.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I walk in without an appointment?</summary>
+            <p>Walk-ins are welcome for urgent concerns, though booking ahead means shorter wait times. Our 24/7 line is always open for anything that can't wait.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What should I bring to my first visit?</summary>
+            <p>Bring a photo ID, your insurance card, and a list of any current medications. If you're a new patient, arriving 10 minutes early helps with paperwork.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you offer pediatric and family appointments together?</summary>
+            <p>Yes — many families book same-day visits for multiple household members, including our pediatric team for children and teens.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Free Resource / Lead Magnet ===================== -->
+    <section id="resource" class="resource fade-in">
+      <div class="container resource-inner">
+        <div class="resource-copy">
+          <p class="hero-eyebrow resource-eyebrow">Free Download</p>
+          <h2>The New Patient Checklist</h2>
+          <p>Everything to sort out before your first visit, in one page. Enter your email and we'll send it over.</p>
+          <ul class="resource-list">
+            <li>What to bring and how to prepare</li>
+            <li>Questions worth asking your doctor</li>
+            <li>How insurance verification works here</li>
+          </ul>
+        </div>
+
+        <form id="checklistForm" class="checklist-form" novalidate>
+          <div id="checklistSuccess" class="form-success" role="status" hidden>
+            ✅ Check your inbox — your checklist is on its way.
+          </div>
+          <div class="form-group">
+            <label for="checklistEmail">Email address</label>
+            <input type="email" id="checklistEmail" name="checklistEmail" autocomplete="email" aria-describedby="checklistEmailError" placeholder="you@example.com" />
+            <span class="field-error" id="checklistEmailError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">Get the Checklist</button>
+          <p class="resource-fineprint">No spam. One email, unsubscribe anytime.</p>
+        </form>
       </div>
     </section>
 
@@ -210,7 +439,9 @@
     <div class="container footer-grid">
       <div class="footer-col">
         <a href="#home" class="logo footer-logo">
-          <span class="logo-icon" aria-hidden="true">✚</span>
+          <span class="logo-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
           Wellspring Clinic
         </a>
         <p class="footer-tagline">Compassionate care, close to you.</p>
@@ -231,7 +462,9 @@
         <ul class="footer-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#team">Our Team</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>

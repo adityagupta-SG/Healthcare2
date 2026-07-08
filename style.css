@@ -3,15 +3,20 @@
    Table of contents:
    1. Reset & Base
    2. Utility / Layout
-   3. Buttons
-   4. Navbar
-   5. Hero
-   6. Services
-   7. Testimonials
-   8. Contact / Appointment Form
-   9. Footer
-   10. Scroll Fade-in Animation
-   11. Media Queries
+   3. Icons
+   4. Buttons
+   5. Navbar
+   6. Hero
+   7. How It Works
+   8. Services
+   9. Team
+   10. Testimonials
+   11. FAQ
+   12. Free Resource (Lead Magnet)
+   13. Contact / Appointment Form
+   14. Footer
+   15. Scroll Fade-in & Hero Reveal Animation
+   16. Media Queries
 ===================================================== */
 
 /* ===== 1. Reset & Base ===== */
@@ -97,7 +102,35 @@ h1, h2, h3 {
   font-size: 1.05rem;
 }
 
-/* ===== 3. Buttons ===== */
+/* ===== 3. Icons ===== */
+.icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.icon-lg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;
+}
+
+.quote-mark {
+  fill: currentColor;
+  stroke: none;
+  width: 28px;
+  height: 28px;
+  color: #ff8552;
+  opacity: 0.85;
+  margin-bottom: 0.75rem;
+}
+
+/* ===== 4. Buttons ===== */
 .btn {
   display: inline-block;
   padding: 0.85rem 1.9rem;
@@ -137,7 +170,7 @@ h1, h2, h3 {
   width: 100%;
 }
 
-/* ===== 4. Navbar ===== */
+/* ===== 5. Navbar ===== */
 .site-header {
   position: sticky;
   top: 0;
@@ -167,6 +200,13 @@ h1, h2, h3 {
 
 .logo-icon {
   color: #0d7377;
+  display: inline-flex;
+}
+
+.logo-icon .icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
 }
 
 .nav-menu {
@@ -259,7 +299,7 @@ h1, h2, h3 {
   transform: rotate(-45deg);
 }
 
-/* ===== 5. Hero ===== */
+/* ===== 6. Hero ===== */
 .hero {
   position: relative;
   min-height: 90vh;
@@ -328,7 +368,73 @@ h1, h2, h3 {
   color: #eafffd;
 }
 
-/* ===== 6. Services ===== */
+.trust-icon .icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Hero load-in choreography: eyebrow -> headline -> subheading -> buttons -> trust strip */
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: heroReveal 0.7s ease forwards;
+}
+
+.reveal-1 { animation-delay: 0.05s; }
+.reveal-2 { animation-delay: 0.2s; }
+.reveal-3 { animation-delay: 0.35s; }
+.reveal-4 { animation-delay: 0.5s; }
+.reveal-5 { animation-delay: 0.65s; }
+
+/* ===== 7. How It Works ===== */
+.how-it-works {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.steps-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2.5rem;
+}
+
+.step-card {
+  position: relative;
+  padding-top: 0.5rem;
+}
+
+.step-number {
+  display: block;
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #d6ecea;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.step-card h3 {
+  color: #0d3b40;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-card p {
+  color: #52696b;
+  font-size: 0.95rem;
+}
+
+/* ===== 8. Services ===== */
 .services {
   padding: 6rem 0;
   background: #f4faf9;
@@ -355,7 +461,9 @@ h1, h2, h3 {
 }
 
 .service-icon {
-  font-size: 2.25rem;
+  display: flex;
+  justify-content: center;
+  color: #0d7377;
   margin-bottom: 1rem;
 }
 
@@ -370,7 +478,54 @@ h1, h2, h3 {
   font-size: 0.95rem;
 }
 
-/* ===== 7. Testimonials ===== */
+/* ===== 9. Team ===== */
+.team {
+  padding: 6rem 0;
+  background: #f4faf9;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.75rem;
+}
+
+.team-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(13, 59, 64, 0.06);
+}
+
+.avatar-lg {
+  width: 64px;
+  height: 64px;
+  font-size: 1.15rem;
+  margin: 0 auto 1rem;
+}
+
+.team-card h3 {
+  color: #0d3b40;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.team-role {
+  color: #0d7377;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.team-bio {
+  color: #52696b;
+  font-size: 0.92rem;
+}
+
+/* ===== 10. Testimonials ===== */
 .testimonials {
   padding: 6rem 0;
   background: #ffffff;
@@ -421,7 +576,140 @@ h1, h2, h3 {
   color: #0d3b40;
 }
 
-/* ===== 8. Contact / Appointment Form ===== */
+/* ===== 11. FAQ ===== */
+.faq {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.faq-inner {
+  max-width: 760px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: #f4faf9;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #0d3b40;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "";
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #0d7377;
+  border-bottom: 2px solid #0d7377;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(-135deg);
+}
+
+.faq-item p {
+  color: #4a5f61;
+  font-size: 0.95rem;
+  margin-top: 0.9rem;
+}
+
+/* ===== 12. Free Resource (Lead Magnet) ===== */
+.resource {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #0d3b40 0%, #0d7377 100%);
+  color: #ffffff;
+}
+
+.resource-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 980px;
+}
+
+.resource-eyebrow {
+  color: #bff0ec;
+}
+
+.resource-copy h2 {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  margin: 0.5rem 0 0.75rem;
+}
+
+.resource-copy > p {
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 1.25rem;
+}
+
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.resource-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.95rem;
+}
+
+.resource-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff8552;
+}
+
+.checklist-form {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(13, 59, 64, 0.15);
+}
+
+.checklist-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.checklist-form .form-group label {
+  color: #234;
+}
+
+.resource-fineprint {
+  color: #6d8385;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 0.85rem;
+}
+
+/* ===== 13. Contact / Appointment Form ===== */
 .contact {
   padding: 6rem 0;
   background: #f4faf9;
@@ -505,7 +793,7 @@ h1, h2, h3 {
   font-size: 0.95rem;
 }
 
-/* ===== 9. Footer ===== */
+/* ===== 14. Footer ===== */
 .site-footer {
   background: #0d3b40;
   color: #cfe8e6;
@@ -522,6 +810,10 @@ h1, h2, h3 {
 .footer-logo {
   color: #ffffff;
   margin-bottom: 0.75rem;
+}
+
+.footer-logo .logo-icon {
+  color: #6fc4bd;
 }
 
 .footer-tagline {
@@ -583,7 +875,7 @@ h1, h2, h3 {
   color: #9fc6c3;
 }
 
-/* ===== 10. Scroll Fade-in Animation ===== */
+/* ===== 15. Scroll Fade-in & Hero Reveal Animation ===== */
 .fade-in {
   opacity: 0;
   transform: translateY(24px);
@@ -605,9 +897,15 @@ h1, h2, h3 {
     transform: none;
     transition: none;
   }
+
+  .reveal {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
 }
 
-/* ===== 11. Media Queries ===== */
+/* ===== 16. Media Queries ===== */
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
@@ -629,7 +927,7 @@ h1, h2, h3 {
   }
 
   .nav-menu.open {
-    max-height: 400px;
+    max-height: 500px;
   }
 
   .nav-menu li {
@@ -662,5 +960,10 @@ h1, h2, h3 {
   .hero-content {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .resource-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
