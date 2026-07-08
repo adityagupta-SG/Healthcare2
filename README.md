@@ -4,6 +4,8 @@ A static, single-page marketing website for a fictional healthcare clinic. Built
 
 **Live site:** https://adityagupta-sg.github.io/Healthcare2/
 
+![Wellspring Family Clinic screenshot](assets/screenshot.png)
+
 ## Features
 
 - Responsive, mobile-first layout with a collapsible hamburger nav below 768px
@@ -25,6 +27,8 @@ A static, single-page marketing website for a fictional healthcare clinic. Built
 ├── index.html   # Markup only — links style.css and script.js
 ├── style.css    # All styling, organized into numbered sections
 ├── script.js    # Nav toggle, scroll animations, form validation, footer year
+├── assets/
+│   └── screenshot.png   # Site screenshot shown above, captured with Playwright
 └── .github/
     └── workflows/
         └── deploy.yml   # GitHub Actions workflow that deploys to GitHub Pages
