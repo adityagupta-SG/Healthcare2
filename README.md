@@ -20,7 +20,7 @@ A static, single-page marketing website for a fictional healthcare clinic. Built
 - HTML5 (semantic markup)
 - CSS3 (Flexbox/Grid, one responsive breakpoint at 768px)
 - Vanilla JavaScript (no frameworks)
-- Google Fonts ("Inter")
+- Google Fonts ("Fraunces" for headings, "Inter" for body/UI)
 
 ## Project Structure
 
