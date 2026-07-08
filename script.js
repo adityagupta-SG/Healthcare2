@@ -39,8 +39,16 @@ const fadeObserver = new IntersectionObserver(
 fadeElements.forEach((el) => fadeObserver.observe(el));
 
 // ===== Appointment Form Validation & Submission =====
+// Real email delivery via FormSubmit (https://formsubmit.co) — no backend of our own required.
+// Uses FormSubmit's hashed endpoint (rather than a naked email address) to avoid exposing the
+// destination inbox in public source. First submission from a new origin triggers a one-time
+// "Activate Form" email that must be confirmed before submissions start arriving.
+const FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/9e25cab2ecc778d4c74a9187a2ddc816';
+
 const form = document.getElementById('appointmentForm');
 const formSuccess = document.getElementById('formSuccess');
+const formError = document.getElementById('formError');
+const submitButton = form.querySelector('.btn-submit');
 
 const fields = {
   fullName: {
@@ -83,14 +91,16 @@ Object.values(fields).forEach((field) => {
   field.input.addEventListener('blur', () => validateField(field));
 });
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const results = Object.values(fields).map((field) => validateField(field));
   const allValid = results.every(Boolean);
 
+  formSuccess.hidden = true;
+  formError.hidden = true;
+
   if (!allValid) {
-    formSuccess.hidden = true;
     return;
   }
 
@@ -104,18 +114,34 @@ form.addEventListener('submit', (e) => {
 
   console.log('Appointment request submitted:', appointmentData);
 
-  // ---------------------------------------------------------------
-  // Real backend integration would go here, e.g.:
-  // fetch('/api/appointments', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify(appointmentData),
-  // });
-  // ---------------------------------------------------------------
+  submitButton.disabled = true;
+  submitButton.textContent = 'Sending...';
 
-  formSuccess.hidden = false;
-  form.reset();
-  Object.values(fields).forEach((field) => field.input.classList.remove('invalid'));
+  try {
+    const response = await fetch(FORMSUBMIT_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        _subject: 'New Appointment Request — Wellspring Family Clinic',
+        ...appointmentData,
+      }),
+    });
+    const result = await response.json();
+
+    if (!response.ok || result.success === 'false' || result.success === false) {
+      throw new Error(result.message || 'Submission failed');
+    }
+
+    formSuccess.hidden = false;
+    form.reset();
+    Object.values(fields).forEach((field) => field.input.classList.remove('invalid'));
+  } catch (err) {
+    console.error('Appointment request failed to send:', err);
+    formError.hidden = false;
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Submit Request';
+  }
 });
 
 // ===== Checklist Opt-in (Free Resource) =====

@@ -812,6 +812,21 @@ h1, h2, h3 {
   font-size: 0.95rem;
 }
 
+.form-error {
+  grid-column: 1 / -1;
+  background: #fbeaea;
+  color: #8a2c2c;
+  border: 1px solid #f0c4c4;
+  padding: 0.9rem 1.1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-error a {
+  text-decoration: underline;
+}
+
 /* ===== 14. Footer ===== */
 .site-footer {
   background: #1F3A2E;

@@ -12,7 +12,7 @@ A static, single-page marketing website for a fictional healthcare clinic. Built
 - Custom inline SVG icon set (nav logo, trust badges, service icons) — no emoji icons
 - Staggered hero load-in animation and scroll-triggered fade-ins (`IntersectionObserver`), both respecting `prefers-reduced-motion`
 - Sections: Hero, How It Works, Services, Meet Our Care Team, Testimonials, FAQ (native accordion), Free New Patient Checklist opt-in, Appointment/Contact form, Footer
-- Client-side validated appointment form (name, email, phone) and checklist opt-in form (email), both with inline error messages — no `alert()` popups
+- Appointment form (name, email, phone) validates client-side then delivers real email via [FormSubmit](https://formsubmit.co) — no backend of our own. Checklist opt-in form (email) validates client-side only, for now. Both show inline errors — no `alert()` popups
 - On-page SEO: canonical tag, Open Graph/Twitter cards, `MedicalClinic` + `FAQPage` JSON-LD structured data, `robots.txt`, and `sitemap.xml`
 - Floating WhatsApp chat button (bottom-right, pulsing ring, respects `prefers-reduced-motion`) linking to a pre-filled `wa.me` chat
 
@@ -57,4 +57,6 @@ The site auto-deploys to GitHub Pages via GitHub Actions on every push to `main`
 
 ## Notes
 
-Both forms (appointment request and checklist opt-in) validate and log submissions to the browser console — there is no backend yet. Clearly marked spots in `script.js` indicate where real API calls (`fetch('/api/appointments', ...)` and an email service integration) would be wired in.
+The appointment form delivers real email via FormSubmit's AJAX endpoint (`https://formsubmit.co/ajax/...`) — no backend of our own. FormSubmit requires a one-time "Activate Form" confirmation click (emailed to the destination inbox) the first time a given origin submits to it; this is a per-domain requirement of the service, not something configured in this repo.
+
+The checklist opt-in form still validates client-side only and logs to the browser console — a commented spot in `script.js` marks where a real email service integration would go if wired up later.
